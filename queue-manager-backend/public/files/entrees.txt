@@ -1,0 +1,14 @@
+**************************** fichier pour les entrees ****************************
+name				
+
+entre1				
+entre2				
+entre3				
+entre4		
+entre5				
+entre6				
+entre7	
+entre8			
+entre9
+entre10
+entre11

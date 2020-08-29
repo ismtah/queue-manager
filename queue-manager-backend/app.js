@@ -8,6 +8,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRoute');
 var commandeRouter = require('./routes/commandeRouter');
+var entreeRoute = require('./routes/entreeRoute');
+var plateRoute = require('./routes/plateRoute');
+const dessertRoute = require('./routes/dessertRoute');
+var cors = require('cors');
 
 var app = express();
 
@@ -22,11 +26,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+app.use(cors())
+
+// set up routers
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
 commandeRouter(app);
 usersRouter(app);
+entreeRoute(app);
+plateRoute(app);
+dessertRoute(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -44,11 +53,9 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-// connect to database mysql
-
-
 app.listen(3000, () => {
-  console.log("hello world")
+  console.log("server listening on 3000")
 })
+
 
 module.exports = app;

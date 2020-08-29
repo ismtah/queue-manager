@@ -1,0 +1,10 @@
+**************************** fichier pour les plats****************************
+name				
+
+plat1				
+plat2				
+plat3				
+plat4				
+plat5				
+plat6				
+plat7				
