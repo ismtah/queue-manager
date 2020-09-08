@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+    app:
+        build: queue-manager-backend
+        ports:
+            - 3000:3000
+        volumes:
+            - ./:/app
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_USER: allUsers
+            MYSQL_PASSWORD: TRACETOUTA
+            #MYSQL_DB: queu-manager
+    mysql:
+        image: mysql:5.7
+        volumes:
+            - qm-mysql-data:/var/lib/mysql
+        # Setup the custom configuration
+        #ADD mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+        environment: 
+            MYSQL_ROOT_PASSWORD: TRACETOUTA
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'TRACETOUTA'
+            #MYSQL_DATABASE: queu_manager
+    web:
+        build: queue-manager-web-angular
+        ports: 
+            - 4200:4200
+        volumes:
+            - ./angular-client:/app 
+    
+
+volumes:
+    qm-mysql-data:
+
+#Create new user with host '%' rather than localhost. Below is works for me. It may useful to you.
+#mysql> CREATE USER 'usernameall'@'%' IDENTIFIED BY 'ThePassword';
+#mysql> grant all on *.* to 'usernameall'@'%';

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "queu-manager-web": {
+      "hosting": {
+        "queue-manager-web-angular": [
+          "queu-manager-web"
+        ]
+      }
+    }
+  }
+}

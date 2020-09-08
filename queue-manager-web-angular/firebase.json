@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "queue-manager-web-angular",
+      "public": "dist/queue-manager-web-angular",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+    app:
+        image: node:10-alpine
+        ports:
+            - 3000:3000
+        working_dir: /app
+        command: sh -c "npm install --no-bin-links && npm start"
+        volumes:
+            - ./:/app
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_USER: allUsers
+            MYSQL_PASSWORD: TRACETOUTA
+            #MYSQL_DB: queu-manager
+    mysql:
+        image: mysql:5.7
+        volumes:
+            - qm-mysql-data:/var/lib/mysql
+        # Setup the custom configuration
+        #ADD mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+        environment: 
+            MYSQL_ROOT_PASSWORD: TRACETOUTA
+            #MYSQL_DATABASE: queu_manager
+
+volumes:
+    qm-mysql-data:
+
+#Create new user with host '%' rather than localhost. Below is works for me. It may useful to you.
+#mysql> CREATE USER 'usernameall'@'%' IDENTIFIED BY 'ThePassword';
+#mysql> grant all on *.* to 'usernameall'@'%';

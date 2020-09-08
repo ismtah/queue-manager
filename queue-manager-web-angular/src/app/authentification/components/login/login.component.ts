@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Output("") loginDispatcher = new EventEmitter();
   user: any = {
     username: "",
     password: ""
@@ -19,11 +21,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.user).subscribe((data: any) => {
-      if (data.status) {
-        this.router.navigate(['home'])
-      }
-    })
+    this.loginDispatcher.emit({ type: "switch to signup", data: this.user })
+
+  }
+
+  redirectToSignupPage() {
+    this.loginDispatcher.emit({ type: "switch to signup", data: {} })
   }
 
 }

@@ -10,8 +10,11 @@
             <input type="text" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password">
         </div>
         <div class="action">
-            <div class="login">
+            <div class="login d-inline-block">
                 <button (click)="login()" class="btn btn-danger">Login</button>
+            </div>
+            <div class="signup d-inline-block ml-4">
+                <button (click)="login()" class="btn btn-success">signup</button>
             </div>
         </div>
     </form>

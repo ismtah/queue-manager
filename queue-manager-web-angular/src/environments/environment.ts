@@ -7,7 +7,8 @@ import 'zone.js/dist/zone-error';
 export const environment = {
   production: false,
 
-  baseUrl: 'http://localhost:3000',
+  //baseUrl: 'http://localhost:3000',
+  baseUrl: 'http://192.168.99.100:3000',
 
   api: {
     signup: '/user/signup',

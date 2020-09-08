@@ -1,0 +1,7 @@
+<app-login *ngIf="currentpage=='login'" (loginDispatcher)="handleLoginDispatcher($event)"></app-login>
+<app-signup *ngIf="currentpage=='signup'" (signupDispatcher)="handleSignupDispatcher($event)"></app-signup>
+
+<!-- <div *ngIf="!inputData || inputData?.length==0" id="noData" class="noData">No data</div>
+<div id="dataList" class="dataList">
+    <div *ngFor="let item of inputData" [ngClass]="{even: item.length%2==0, odd: item.length%2!=0}">{{item}}</div>
+</div> -->

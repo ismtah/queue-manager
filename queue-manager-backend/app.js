@@ -1,3 +1,5 @@
+'use strict';
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -14,6 +16,8 @@ const dessertRoute = require('./routes/dessertRoute');
 var cors = require('cors');
 
 var app = express();
+
+const PORT = 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

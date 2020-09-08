@@ -22,8 +22,11 @@
                 [(ngModel)]="user.phoneNumber">
         </div>
         <div class="action">
-            <div class="login">
-                <button (click)="login()" class="btn btn-success">Login</button>
+            <div class="login d-inline-block">
+                <button (click)="login()" class="btn btn-success">Signup</button>
+            </div>
+            <div class="signup d-inline-block ml-4">
+                <button (click)="redirectToLogin()" class="btn btn-danger">Login</button>
             </div>
         </div>
     </form>
