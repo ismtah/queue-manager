@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('deploy') {
             steps {
-                sh '''
+                C:\Program Files\Git\bin sh '''
                 npm install -g @angular/cli
                 npm install
                 npm deploy
