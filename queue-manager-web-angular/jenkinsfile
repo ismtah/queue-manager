@@ -3,7 +3,11 @@ pipeline {
     stages {
         stage('deploy') {
             steps {
-                sh 'npm deploy'
+                sh '''
+                npm install -g @angular/cli
+                npm install
+                npm deploy
+                '''
             }
         }
     }
