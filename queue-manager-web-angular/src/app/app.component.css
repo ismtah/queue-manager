@@ -1,0 +1,32 @@
+.content {
+width: 100%;
+}
+.title{
+    width: 90%;
+    text-align: center;
+    color: rgb(87, 196, 159);
+    font-weight: 500;
+}
+.header{
+    width: 40%;
+    text-align: center;
+    color: #1877f2;
+}
+.login-form{
+    width: 90%;
+}
+.action button{
+    width: 100%;
+    border-radius: 6px;
+    color: white;
+    background-color:  #1877f2;   
+}
+.error{
+    text-align: center;
+    width: 100%;margin-bottom: 15px;
+}
+.error a{
+    width: 90%;
+    color: red;
+}
+

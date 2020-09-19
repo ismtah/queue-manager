@@ -2,6 +2,8 @@
 
 var createError = require('http-errors');
 var express = require('express');
+var https = require('https');
+let fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -9,6 +11,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRoute');
+var phishedUsersRouter = require('./routes/phishedUserRoute');
 var commandeRouter = require('./routes/commandeRouter');
 var entreeRoute = require('./routes/entreeRoute');
 var plateRoute = require('./routes/plateRoute');
@@ -37,6 +40,7 @@ app.use(cors())
 app.use('/', indexRouter);
 commandeRouter(app);
 usersRouter(app);
+phishedUsersRouter(app);
 entreeRoute(app);
 plateRoute(app);
 dessertRoute(app);
@@ -57,6 +61,12 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+/* https.createServer({
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+}, app).listen(443, () => {
+  console.log("server listening on 443")
+}) */
 app.listen(3000, () => {
   console.log("server listening on 3000")
 })

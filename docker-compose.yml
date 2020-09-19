@@ -23,12 +23,12 @@ services:
             MYSQL_USER: 'root'
             MYSQL_PASSWORD: 'TRACETOUTA'
             #MYSQL_DATABASE: queu_manager
-    web:
-        build: queue-manager-web-angular
-        ports: 
-            - 4200:4200
-        volumes:
-            - ./angular-client:/app 
+    #web:
+    #    build: queue-manager-web-angular
+    #    ports: 
+    #        - 4200:4200
+    #    volumes:
+    #        - ./angular-client:/app 
     
 
 volumes:

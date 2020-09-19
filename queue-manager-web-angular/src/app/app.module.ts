@@ -11,6 +11,7 @@ import { AuthContainerComponent } from './authentification/auth-container/auth-c
 import { SharedModule } from './shared/shared.module';
 import { FooterAComponent } from './shared/components/footer-a/footer-a.component';
 import { FooterBComponent } from './shared/components/footer-b/footer-b.component';
+import { FormsModule } from '@angular/forms';
 const routes = [
   { path: "auth/login", component: AuthContainerComponent },
   { path: "home", component: HomeContainerComponent },
@@ -24,7 +25,7 @@ const routes = [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
     AuthentificationModule, HomeModule, SharedModule,
     RouterModule.forRoot(routes)
   ],

