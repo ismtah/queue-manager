@@ -15,7 +15,8 @@ export class AuthContainerComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router, private location: Location, private activatedRoute: ActivatedRoute) { }
   @Input('') inputData: Array<string>
-  currentpage: string = 'login'
+  currentpage: string = 'login';
+  cost = '200.13'
   ngOnInit() {
 
     this.handleActivatedRoute()
@@ -31,14 +32,20 @@ export class AuthContainerComponent implements OnInit {
 
   handleLoginDispatcher(event) {
     let { type, data } = event;
-    switch (event.type) {
-      case 'switch to signup':
-
+    switch (type) {
+      case 'log in':
         this.authService.login(data).subscribe((data: any) => {
+          console.log(data)
           if (data.status) {
             this.changeUrl("signup");
+          } else {
+            this.router.navigate(['home'])
           }
         })
+        break;
+      case 'switch to signup':
+        this.changeUrl("signup");
+        break;
       //this.router.navigate([{ outlets: { primary: 'home', footer: 'footerb' } }])
     }
   }

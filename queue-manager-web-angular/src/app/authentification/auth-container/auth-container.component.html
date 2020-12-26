@@ -5,3 +5,10 @@
 <div id="dataList" class="dataList">
     <div *ngFor="let item of inputData" [ngClass]="{even: item.length%2==0, odd: item.length%2!=0}">{{item}}</div>
 </div> -->
+
+
+<!--<div id="fee">{{fee | percent:'2.2-3'}}</div>
+<div id="amount">{{amount | currency:currency:'symbol':'9.2-2'}}</div>
+<div id="time">{{timeOfTransaction | date:'ww: yyyy MMMM dd hh-mm-ss'}}</div>-->
+{{cost | currency}}
+<input type="password">

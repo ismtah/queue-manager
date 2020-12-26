@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Output("") loginDispatcher = new EventEmitter();
+  @Output() loginDispatcher = new EventEmitter();
   user: any = {
     username: "",
     password: ""
@@ -21,8 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginDispatcher.emit({ type: "switch to signup", data: this.user })
-
+    this.loginDispatcher.emit({ type: "log in", data: this.user })
   }
 
   redirectToSignupPage() {

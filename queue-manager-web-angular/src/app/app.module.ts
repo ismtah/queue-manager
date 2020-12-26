@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button'
+
 import { AuthentificationModule } from '../app/authentification/authentification.module'
 import { HomeModule } from '../app/home/home.module';
 import { AppComponent } from './app.component';
@@ -37,7 +41,8 @@ const routes = [
     AuthentificationModule, HomeModule, SharedModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule, MatButtonModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

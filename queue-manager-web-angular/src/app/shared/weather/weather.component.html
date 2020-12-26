@@ -1,4 +1,68 @@
-<!-- <nz-modal [(nzVisible)]="true" nzTitle="Modal Title">
-    <p>Modal Content</p>
-</nz-modal> -->
-ff
+<div class="header">
+    <div class="left-area weather-info">
+        <div class="top-header title">
+            <h1 mat-dialog-title>Dialog with elements</h1>
+        </div>
+        <div class="top-header search">
+            <mat-icon matPrefix aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+
+            <input matInput type="search">
+        </div>
+
+        <div class="second-head">
+            <ul>
+                <li *ngFor="let item of periods">{{item}}</li>
+            </ul>
+        </div>
+
+        <div class="table">
+            <p-table [value]="weatherData">
+                <ng-template pTemplate="body" let-weather>
+                    <tr>
+                        <td>{{weather.day}}</td>
+                        <td>
+                            <img src="../../../assets/images/svg/pluie.svg" alt="pluie" width="20">
+                            <span>{{weather.precepetationPercent}}%</span>
+                        </td>
+                        <td>
+                            <img [src]="weather.soleil" alt="" width="20">
+                        </td>
+                        <td class="temperature">
+                            <div>
+                                <span
+                                    style="position: absolute; left: 5%;">{{weather.temperature.min|temperature}}</span>
+                            </div>
+                            <div class="back-area" id="back-area"></div>
+                            <div class="front-area" id="front-area" [appThumbTemperature]="weather.temperature.percent">
+
+                            </div>
+                            <div>
+                                <span
+                                    style="position: absolute; right: 5%;">{{weather.temperature.max|temperature}}</span>
+                            </div>
+                        </td>
+
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="charts">
+            <div echarts [options]="chartOption" class="weather-chart"></div>
+        </div>
+    </div>
+    <div class="right-area weather-info">
+        <div class="date">
+            <div style="display: inline-table; width: 50%;text-align: right;height:50px;">
+                <img src="../../../assets/images/svg/pluie.svg" alt="" width="20px">
+            </div>
+            <div style="display: inline-table;width: 50%;height: 50px;">
+                <a style="display: block;">Today</a>
+                <a style="display: block;">Fri, Ti Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="handleCancelModal()">Close</button>
+</div>

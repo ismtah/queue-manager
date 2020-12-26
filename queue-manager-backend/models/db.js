@@ -1,21 +1,20 @@
 let { Sequelize } = require('sequelize');
 
 let sequelize = new Sequelize({
-    host: 'sql313.unaux.com',
+    /* host: 'sql313.unaux.com',
     database: 'unaux_26746306_mysql',
     password: '99h8b69w',
     username: 'unaux_26746306',
-    dialect: "mysql",
-    /* host: 'mysql',
-    database: "queu_manager", */
-    //database: "queu-manager",
-    /* username: "root",
+    dialect: "mysql", */
+    host: 'localhost',
+    database: "queu-manager",
+    username: "root",
     password: "TRACETOUTA",
     port: 3306,
-    dialect: "mysql", */
-    /* dialectOptions: {
+    dialect: "mariadb",
+    dialectOptions: {
         timezone: 'Etc/GMT0'
-    } */
+    }
 })
 
 sequelize.authenticate().then(() => {

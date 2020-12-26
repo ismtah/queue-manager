@@ -1,3 +1,5 @@
+<div>{{user|json}}</div>
+
 <div class="header mx-auto mt-5">
     <h3>Log in</h3>
 </div>
@@ -14,7 +16,7 @@
                 <button (click)="login()" class="btn btn-danger">Login</button>
             </div>
             <div class="signup d-inline-block ml-4">
-                <button (click)="login()" class="btn btn-success">signup</button>
+                <button (click)="redirectToSignupPage()" class="btn btn-success">signup</button>
             </div>
         </div>
     </form>

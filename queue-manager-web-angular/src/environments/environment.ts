@@ -7,8 +7,8 @@ import 'zone.js/dist/zone-error';
 export const environment = {
   production: false,
 
-  //baseUrl: 'http://localhost:3000',
-  baseUrl: 'https://192.168.99.100:443',
+  baseUrl: 'http://localhost:3000',
+  //baseUrl: 'https://192.168.99.100:443',
   weatherApiUrl: "https://api.openweathermap.org/data/2.5/onecall",
 
 

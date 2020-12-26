@@ -4,7 +4,7 @@ const Commande = require('../models/commandeModel.js');
 const { Op } = require('sequelize');
 const bcrypt = require('bcrypt');
 module.exports = {
-    createUser: async (req, res) => {
+    createUser: async (req, res, next) => {
         console.log(req.body)
         let user = User.build(req.body);
         let hashedPassword = await hashPassword(req.body.password);
@@ -12,7 +12,8 @@ module.exports = {
 
         //hashPassword(req.body.password)
         if (!user.getDataValue('username') || !user.getDataValue('password') || !user.getDataValue('email')) {
-            res.status(400).send({ status: false, message: "please provide all required fields" })
+            next({ status: false, message: "please provide all required fields" })
+            //res.status(400).send({ status: false, message: "please provide all required fields" })
         }
         else {
             if (req.body.password != req.body.confirmPassword) {
